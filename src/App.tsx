@@ -1,7 +1,11 @@
+import {Reminder} from "./features/reminder.tsx";
+
 function App() {
 
     return (
-        <div className='flex justify-center items-center'>Airdrop Claim Reminder</div>
+        <div className='flex justify-center items-center'>
+            <Reminder/>
+        </div>
     )
 }
 
