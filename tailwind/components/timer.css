@@ -1,0 +1,60 @@
+.timer {
+    @apply flex justify-center;
+
+    &-xs {
+        @apply gap-3;
+
+        .timer-progress {
+            > span {
+                @apply text-xl;
+            }
+
+            &-date-part {
+                @apply -bottom-5  text-[0.6rem];
+            }
+        }
+    }
+
+
+    &-primary {
+        .timer-progress {
+            &-back-bar {
+                @apply stroke-[#007BEC];
+                opacity: 0.2;
+            }
+
+            &-front-bar {
+                @apply stroke-[#007BEC];
+            }
+        }
+    }
+
+
+    .timer-progress {
+        @apply relative flex flex-col items-center;
+
+        > span {
+            @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-light;
+        }
+
+        &-date-part {
+            @apply uppercase absolute font-normal tracking-[0.2em] ;
+        }
+
+        &-back-bar {
+            stroke-linecap: round;
+            fill: none;
+            opacity: 0.2;
+        }
+
+        &-front-bar {
+            stroke-linecap: round;
+            fill: none;
+            stroke-width: 5px;
+            stroke-dasharray: 332.669;
+            transform: rotate(-90deg);
+            transform-origin: center center;
+            transition: all 0.2s linear;
+        }
+    }
+}
