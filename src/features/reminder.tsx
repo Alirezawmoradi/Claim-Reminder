@@ -4,16 +4,20 @@ import hamster from '../../public/images/hamster-coin.webp'
 import {IoIosAddCircleOutline} from "react-icons/io";
 import {Timer} from "../components/timer/timer.tsx";
 import {TimerRef} from "../components/timer/timer.types.ts";
+import {sendMessage} from "../api/send-message.ts";
 
 export const Reminder: React.FC = () => {
     const getTwoMinutesFromNow = () => {
         const time = new Date();
-        time.setSeconds(time.getSeconds() + 120);
+        time.setSeconds(time.getSeconds() + 5);
         return time;
     };
 
     const timerRef = useRef<TimerRef>(null);
 
+    const handleExpire = () => {
+        sendMessage('1499174122', 'Reminder: Your timer has finished. Please check the app.')
+    };
 
     return (
         <div className='flex flex-col justify-center items-center gap-2'>
@@ -31,7 +35,7 @@ export const Reminder: React.FC = () => {
                     <p className='font-medium text-sm'>Hamster</p>
                     <img src={hamster} width={25} height={25} alt='hamster-coin'/>
                 </div>
-                <Timer className='my-8' size='tiny' ref={timerRef} expiryTimestamp={getTwoMinutesFromNow()} />
+                <Timer className='my-8' size='tiny' ref={timerRef} expiryTimestamp={getTwoMinutesFromNow()} onExpire={handleExpire}/>
             </div>
         </div>
     )
