@@ -1,5 +1,5 @@
 // @ts-ignore
-import React, {forwardRef, useImperativeHandle} from "react";
+import React, {forwardRef, useEffect, useImperativeHandle} from "react";
 import {Size, TimerProps, TimerRef} from "./timer.types.ts";
 import {useTimer} from "react-timer-hook";
 import classNames from "classnames";
@@ -20,6 +20,7 @@ export const Timer = forwardRef<TimerRef, TimerProps>(
             expiryTimestamp,
             autoStart,
             onExpire,
+            onTimerChange=()=>{},
             size = 'tiny',
             className,
             showTitle = true,
@@ -31,7 +32,12 @@ export const Timer = forwardRef<TimerRef, TimerProps>(
             expiryTimestamp,
             onExpire,
             autoStart
-        })
+        });
+
+        useEffect(() => {
+            onTimerChange(expiryTimestamp);
+        }, [expiryTimestamp]);
+
         const classes = classNames(
             'timer',
             {[`${sizeClasses[size]}`]: size},
@@ -44,7 +50,10 @@ export const Timer = forwardRef<TimerRef, TimerProps>(
                 start,
                 pause,
                 resume,
-                restart
+                restart:(newExpiryTimestamp: Date)=>{
+                    restart(newExpiryTimestamp);
+                    onTimerChange(newExpiryTimestamp);
+                }
             }
         ))
 
