@@ -18,6 +18,7 @@ export type TimerProps = MatchTypes & {
     expiryTimestamp: Date;
     autoStart?: boolean;
     onExpire?: () => void;
+    onTimerChange?: (newExpiryTimeStamp: Date) => void;
 }
 
 export type Size =
