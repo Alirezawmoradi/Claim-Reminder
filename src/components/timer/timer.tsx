@@ -15,7 +15,7 @@ export const Timer = forwardRef<TimerRef, TimerProps>(
     (
         {
             expiryTimestamp,
-            autoStart,
+            autoStart = false,
             onExpire,
             onTimerChange=()=>{},
             size = 'tiny',
@@ -47,8 +47,8 @@ export const Timer = forwardRef<TimerRef, TimerProps>(
                 start,
                 pause,
                 resume,
-                restart:(newExpiryTimestamp: Date)=>{
-                    restart(newExpiryTimestamp);
+                restart: (newExpiryTimestamp: Date, autoStart: boolean = true) => {
+                    restart(newExpiryTimestamp, autoStart);
                     onTimerChange(newExpiryTimestamp);
                 }
             }
