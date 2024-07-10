@@ -10,7 +10,7 @@ export type TimerRef = {
 type MatchTypes = {
     className?: string;
     size?: Size;
-    variant?: Variant | 'gradient';
+    variant?: Variant
     showTitle?: boolean;
 }
 
@@ -21,22 +21,9 @@ export type TimerProps = MatchTypes & {
     onTimerChange?: (newExpiryTimeStamp: Date) => void;
 }
 
-export type Size =
-    'tiny'
-    | 'small'
-    | 'normal'
-    | 'large';
+export type Size = 'tiny'
 
-export type Variant =
-    'neutral'
-    | 'primary'
-    | 'secondary'
-    | 'accent'
-    | 'ghost'
-    | 'info'
-    | 'success'
-    | 'warning'
-    | 'error'
+export type Variant = 'primary'
 
 export type TimerProgressProps = MatchTypes & {
     value: number;
