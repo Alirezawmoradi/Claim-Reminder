@@ -21,7 +21,7 @@ export type TimerProps = MatchTypes & {
     onTimerChange?: (newExpiryTimeStamp: Date) => void;
 }
 
-export type Size = 'tiny'
+export type Size = 'tiny' |'normal'
 
 export type Variant = 'primary'
 

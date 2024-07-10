@@ -5,9 +5,7 @@ import {padWithZero} from "../../utils/pad-with-zero.ts";
 
 const sizes: Record<Size, number> = {
     tiny: 20,
-    small: 34,
     normal: 43,
-    large: 54,
 };
 
 export const TimerProgress: React.FC<TimerProgressProps> = ({
