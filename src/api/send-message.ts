@@ -6,7 +6,7 @@ const instance = axios.create({
 
 export async function sendMessage(chatId: string | number, text: string): Promise<void> {
     try {
-        const response = await instance.post(`/bot7085555928:AAH2Iubvh2uQqMt83kZn4cIF6amOEhIabzI/sendMessage`, {
+        const response = await instance.post(`/bot7410831719:AAH9g3JZoSihDiGfOqOU9LF9FmGrB-3_g6M/sendMessage`, {
             chat_id: chatId,
             text: text,
         }, {
