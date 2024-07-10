@@ -7,9 +7,6 @@ import {TimerProgress} from "./timer-progress.tsx";
 
 const sizeClasses: Record<Size, string> = {
     tiny: 'timer-xs',
-    small: 'timer-sm',
-    normal: 'timer-md',
-    large: 'timer-lg'
 };
 
 const calculateTotalSeconds = (hours: number, minutes: number, seconds: number): number => hours * 60 * 60 + minutes * 60 + seconds;
