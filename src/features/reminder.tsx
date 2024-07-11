@@ -13,7 +13,7 @@ export const Reminder: React.FC = () => {
 
     const getThreeHoursFromNow = () => {
         const time = new Date();
-        time.setSeconds(time.getSeconds() + 10800);
+        time.setSeconds(time.getSeconds() + 10);
         return time;
     };
 
