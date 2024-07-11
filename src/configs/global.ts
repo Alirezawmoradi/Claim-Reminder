@@ -1,1 +1,1 @@
-export const botToken = process.env.BOT_TOKEN;
+export const botToken = import.meta.env;
