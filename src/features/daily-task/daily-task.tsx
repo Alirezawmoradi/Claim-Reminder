@@ -16,7 +16,7 @@ export const DailyTask = (activeItem: any) => {
         fetchData();
     }, [activeItem]);
     return (
-        <div className='flex justify-center items-center w-screen h-screen '>
+        <div className='flex justify-center items-center'>
             {
                 loading ?
                     <Loading/>
