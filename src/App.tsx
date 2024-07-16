@@ -7,7 +7,7 @@ function App() {
     const [activeItem, setActiveItem] = useState<number>(1);
 
     return (
-        <div className='flex min-h-screen text-gray-100 justify-center items-center bg-[#13111c] font-bold text-base'>
+        <div className='flex flex-col min-h-screen text-gray-100 justify-center items-center bg-[#13111c] font-bold text-base'>
             <div className='flex flex-col justify-center items-center gap-2'>
                 {
                     activeItem === 1 ?
@@ -15,8 +15,8 @@ function App() {
                         :
                         <DailyTask activeItem={activeItem}/>
                 }
-                <BottomNavigation activeItem={activeItem} setActiveItem={setActiveItem}/>
             </div>
+            <BottomNavigation activeItem={activeItem} setActiveItem={setActiveItem}/>
         </div>
     )
 }
