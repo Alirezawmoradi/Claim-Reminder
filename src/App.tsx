@@ -15,8 +15,8 @@ function App() {
                         :
                         <DailyTask activeItem={activeItem}/>
                 }
+                <BottomNavigation activeItem={activeItem} setActiveItem={setActiveItem}/>
             </div>
-            <BottomNavigation activeItem={activeItem} setActiveItem={setActiveItem}/>
         </div>
     )
 }
