@@ -1,9 +1,9 @@
 import React, {useEffect, useRef, useState} from "react";
-import logo from '../../public/images/9.avif'
-import hamster from '../../public/images/hamster-coin.webp'
-import {Timer} from "../components/timer/timer.tsx";
-import {TimerRef} from "../components/timer/timer.types.ts";
-import {sendMessage} from "../api/send-message.ts";
+import logo from '../../../public/images/9.avif'
+import hamster from '../../../public/images/hamster-coin.webp'
+import {Timer} from "../../components/timer/timer.tsx";
+import {TimerRef} from "../../components/timer/timer.types.ts";
+import {sendMessage} from "../../api/send-message.ts";
 import {VscDebugStart} from "react-icons/vsc";
 import {RiRestartLine} from "react-icons/ri";
 
@@ -60,13 +60,13 @@ export const Reminder: React.FC = () => {
     };
 
     return (
-        <div className='flex flex-col justify-center items-center gap-2'>
+        <>
             <h1 className='text-xl tracking-widest uppercase'>
                 Airdrop Claim Reminder
             </h1>
             <span className='font-light text-sm uppercase tracking-wider'>Save your Time with me</span>
             <img src={logo} alt='hamster'/>
-            <div className='flex  flex-col justify-center items-center'>
+            <div className='flex flex-col justify-center items-center mb-10'>
                 <div className='flex justify-center items-center gap-5'>
                     {
                         isRunning ?
@@ -84,6 +84,6 @@ export const Reminder: React.FC = () => {
                 <Timer className='my-8' size='tiny' ref={timerRef} expiryTimestamp={expiryTimeStamp}
                        onExpire={handleExpire} onTimerChange={handleTimerChange}/>
             </div>
-        </div>
+        </>
     )
 }
