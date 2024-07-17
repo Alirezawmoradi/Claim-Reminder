@@ -8,7 +8,7 @@ function App() {
 
     return (
         <div className='flex flex-col min-h-screen text-gray-100 justify-center items-center bg-[#13111c] font-bold text-base'>
-            <div className='flex flex-col justify-center items-center gap-2'>
+            <div className='flex flex-col flex-1 justify-center items-center gap-2'>
                 {
                     activeItem === 1 ?
                         <Reminder/>

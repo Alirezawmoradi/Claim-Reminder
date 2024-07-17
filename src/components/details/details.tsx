@@ -7,7 +7,7 @@ interface DailyTaskProps {
 
 export const Details: React.FC<DailyTaskProps> = ({data}) => {
     return (
-        <div className='flex flex-col justify-center items-center mb-24'>
+        <div className='flex flex-col justify-center items-center'>
             <div className='flex flex-col mb-16'>
                 <img src={dailyTask} alt='daily task' className='w-32 mb-5'/>
                 <h1 className='text-center uppercase font-extrabold'>Daily Tasks</h1>
